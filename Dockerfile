@@ -10,6 +10,9 @@ ADD . /app
 # Run updates
 RUN apt-get update
 
+# Install Taskwarrior
+RUN apt-get install -y taskwarrior
+
 # Install Timewarrior
 RUN apt-get install -y timewarrior
 
