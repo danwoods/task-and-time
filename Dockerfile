@@ -11,7 +11,7 @@ ADD . /app
 RUN apt-get update
 
 # Install Timewarrior
-RUN apt-get install timewarrior
+RUN apt-get install -y timewarrior
 
 #RUN apt-get install -y nodejs
 #RUN apt-get install -y npm
