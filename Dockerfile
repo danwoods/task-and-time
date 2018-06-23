@@ -24,7 +24,7 @@ RUN apt-get install -y timewarrior
 #RUN npm i && npm run build && npm i -g http-server
 
 # Healthcheck
-HEALTHCHECK --start-period=600s CMD curl --fail http://localhost:3000/ || exit 1
+#HEALTHCHECK --start-period=600s CMD curl --fail http://localhost:3000/ || exit 1
 
 # Make port 80 available to the world outside this container
 #EXPOSE 80
