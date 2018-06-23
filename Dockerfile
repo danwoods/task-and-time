@@ -16,6 +16,9 @@ RUN apt-get install -y taskwarrior
 # Install Timewarrior
 RUN apt-get install -y timewarrior
 
+# Keep container running
+RUN tail -f /dev/null
+
 #RUN apt-get install -y nodejs
 #RUN apt-get install -y npm
 #RUN ln -s /usr/bin/nodejs /usr/bin/node
