@@ -23,7 +23,7 @@ RUN apt-get install -y taskwarrior
 RUN curl -LO https://taskwarrior.org/download/taskd-1.1.0.tar.gz
 RUN tar xzf taskd-1.1.0.tar.gz
 RUN cd taskd-1.1.0 && ls && cmake -DCMAKE_BUILD_TYPE=release.
-RUN make && make install
+RUN ls && make && sudo make install
 
 # Setup Timewarrior sync server
 ## Setup location to store data
