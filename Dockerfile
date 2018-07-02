@@ -11,7 +11,7 @@ ADD . /app
 RUN apt-get update
 
 # Install curl
-RUN apt-get install -y curl cmake g++ libgnutls-dev uuid-dev gnutls-certtool
+RUN apt-get install -y curl cmake g++ libgnutls-dev uuid-dev
 
 # Install Taskwarrior
 RUN apt-get install -y taskwarrior
@@ -36,7 +36,7 @@ Run taskd add org Woodson
 RUN taskd add user 'Woodson' 'Dan Woodson'
 
 # Create certs
-RUN cd taskd-1.1.0/pki && ./generate.client me
+RUN cd taskd-1.1.0/pki && cat vars && ./generate.client me
 
 # Keep container running
 CMD ["tail", "-f /dev/null"]
