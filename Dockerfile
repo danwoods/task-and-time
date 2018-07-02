@@ -17,7 +17,7 @@ RUN apt-get install -y curl cmake g++ libgnutls-dev uuid-dev
 RUN apt-get install -y taskwarrior
 
 # Install Timewarrior
-RUN apt-get install -y timewarrior
+#RUN apt-get install -y timewarrior
 
 # Install Timewarrior sync server
 RUN curl -LO https://taskwarrior.org/download/taskd-1.1.0.tar.gz
