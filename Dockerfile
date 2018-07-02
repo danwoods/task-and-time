@@ -36,7 +36,7 @@ Run taskd add org Woodson
 RUN taskd add user 'Woodson' 'Dan Woodson'
 
 # Create certs
-RUN cd ~/taskd-1.1.0/pki && ./generate.client me && cd -
+RUN cd taskd-1.1.0/pki && ./generate.client me
 
 # Keep container running
 CMD ["tail", "-f /dev/null"]
