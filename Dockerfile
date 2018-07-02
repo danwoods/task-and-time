@@ -16,6 +16,9 @@ RUN apt-get install -y taskwarrior
 # Install Timewarrior
 RUN apt-get install -y timewarrior
 
+# Install Timewarrior sync server
+RUN apt-get install -y taskd
+
 # Keep container running
 CMD ["tail", "-f /dev/null"]
 
