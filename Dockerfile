@@ -1,5 +1,5 @@
 # Use an official Ubuntu as a parent image
-FROM ubuntu:latest
+FROM ubuntu:16.04
 
 # Set the working directory to /app
 WORKDIR /app
