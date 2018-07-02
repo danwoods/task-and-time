@@ -10,6 +10,9 @@ ADD . /app
 # Run updates
 RUN apt-get update
 
+# Install curl
+RUN apt-get install -y curl
+
 # Install Taskwarrior
 RUN apt-get install -y taskwarrior
 
