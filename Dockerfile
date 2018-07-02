@@ -17,7 +17,17 @@ RUN apt-get install -y taskwarrior
 RUN apt-get install -y timewarrior
 
 # Install Timewarrior sync server
-RUN apt-get install -y taskd
+RUN curl -LO http://taskwarrior.org/download/taskd-latest.tar.gz
+RUN tar xzf taskd-latest.tar.gz
+RUN cd taskd-1.1.0
+RUN cmake -DCMAKE_BUILD_TYPE=release .
+RUN make && make install
+
+# Setup Timewarrior sync server
+## Setup location to store data
+RUN export TASKDDATA=/var/taskd && mkdir -p $TASKDDATA
+# Init server
+RUN taskd init
 
 # Setup Organization
 Run taskd add org Woodson
