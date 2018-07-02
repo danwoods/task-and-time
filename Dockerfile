@@ -28,6 +28,12 @@ RUN cd taskd-1.1.0 && ls && cmake -DCMAKE_BUILD_TYPE=release . &&  ls && make &&
 ## Setup location to store data
 ENV TASKDDATA=/var/taskd
 RUN export TASKDDATA=/var/taskd && mkdir -p $TASKDDATA && taskd init
+RUN echo "client.cert=/etc/taskd/pki/client.cert.pem" >> /var/taskd/config && \
+echo "client.key=/etc/taskd/pki/client.key.pem" >> /var/taskd/config && \
+echo "server.cert=/etc/taskd/pki/server.cert.pem" >> /var/taskd/config && \
+echo "server.key=/etc/taskd/pki/server.key.pem" >> /var/taskd/config && \
+echo "server.crl=/etc/taskd/pki/server.crl.pem" >> /var/taskd/config && \
+echo "ca.cert=/etc/taskd/pki/ca.cert.pem" >> /var/taskd/config
 
 # Setup Organization
 Run taskd add org Woodson
