@@ -11,7 +11,7 @@ ADD . /app
 RUN apt-get update
 
 # Install curl
-RUN apt-get install -y curl cmake g++ libgnuutil-dev uuid-dev
+RUN apt-get install -y curl cmake g++ libgnutils-dev uuid-dev
 
 # Install Taskwarrior
 RUN apt-get install -y taskwarrior
