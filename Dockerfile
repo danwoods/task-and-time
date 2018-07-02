@@ -19,6 +19,15 @@ RUN apt-get install -y timewarrior
 # Install Timewarrior sync server
 RUN apt-get install -y taskd
 
+# Setup Organization
+Run taskd add org Woodson
+
+# Add me as user
+RUN taskd add user 'Woodson' 'Dan Woodson'
+
+# Create certs
+RUN cd ~/taskd-1.1.0/pki && ./generate.client me && cd -
+
 # Keep container running
 CMD ["tail", "-f /dev/null"]
 
