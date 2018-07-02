@@ -26,6 +26,7 @@ RUN cd taskd-1.1.0 && ls && cmake -DCMAKE_BUILD_TYPE=release . &&  ls && make &&
 
 # Setup Timewarrior sync server
 ## Setup location to store data
+ENV TASKDDATA=/var/taskd
 RUN export TASKDDATA=/var/taskd && mkdir -p $TASKDDATA && taskd init
 
 # Setup Organization
