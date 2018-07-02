@@ -26,9 +26,7 @@ RUN cd taskd-1.1.0 && ls && cmake -DCMAKE_BUILD_TYPE=release . &&  ls && make &&
 
 # Setup Timewarrior sync server
 ## Setup location to store data
-RUN export TASKDDATA=/var/taskd && mkdir -p $TASKDDATA
-# Init server
-RUN taskd init
+RUN export TASKDDATA=/var/taskd && mkdir -p $TASKDDATA && taskd init
 
 # Setup Organization
 Run taskd add org Woodson
